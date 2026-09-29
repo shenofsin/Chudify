@@ -1,6 +1,6 @@
 # 🎵 Chudify — Web Music Player
 
-A Spotify-inspired web music player built using **HTML, CSS, and JavaScript** as part of the **CodeWithHarry Sigma Web Development Course**.
+A Spotify-inspired web music player built using **HTML, CSS, and JavaScript**.
 
 ## ✨ Features
 
