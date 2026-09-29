@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utility.css" />
+    <link type="image/png" sizes="96x96" rel="icon" href=".../icons8-rockstar-cute-color-96.png">
+    <title>Chudify - Web Music Player</title>
+</head>
+
+<body>
+    <!-- <img src ="logo.svg" alt ="Spotfiylogo"> -->
+    <div class="container flex bg-black">
+        <div class="left">
+            <div class="home rounded bg-gray">
+                <div class="logoContainer">
+                    <a class ="logoAnchor" href = "https://github.com/shenofsin"><div class="logoWrapper">
+                    <div class="logo">
+                        <img class="invert" src="imgs/logo.svg" alt="" />
+                    </div>
+                    <span class ="flex justify-center items-center"><h1>Chudify</h1>&copy;</span>
+                    </div></a>
+                    <span><img class="invert" id="close" src="imgs/close.svg"></span>
+                </div>
+                <ul>
+                    <li><img class="invert" src="imgs/home.svg" alt="" />Home</li>
+                    <li><img class="invert" src="imgs/search.svg" alt="" />Search</li>
+                </ul>
+            </div>
+
+            <div class="library bg-gray rounded m-top">
+                <div class="heading">
+                    <img class="invert" src="imgs/playlist.svg" alt="" />
+                    <h2>Your Library</h2>
+                </div>
+                <div class="rightWrap">
+                    <div class="songList">
+                        <ul>
+                            <!--li's Dynamically inserted from js -->
+                        </ul>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a>
+                        </div>
+                        <div>
+                            <a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a>
+                        </div>
+                        <div>
+                            <a href="https://www.spotify.com/jp/legal/privacy-policy"><span>Privacy Policy</span></a>
+                        </div>
+                        <div>
+                            <a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a>
+                        </div>
+                        <div>
+                            <a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a>
+                        </div>
+                        <div>
+                            <a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right rounded">
+            <div class="header bg-gray rounded">
+                <div class="nav">
+                    <span class="hamburger"><img class="invert" src="imgs/hamburger.svg" alt=" "></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                        color="currentColor" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M11.5 8.45596V9L17.5 9C18.4319 9 18.8978 9 19.2654 9.15224C19.7554 9.35523 20.1448 9.74458 20.3478 10.2346C20.5 10.6022 20.5 11.0681 20.5 12C20.5 12.9319 20.5 13.3978 20.3478 13.7654C20.1448 14.2554 19.7554 14.6448 19.2654 14.8478C18.8978 15 18.4319 15 17.5 15H11.5V15.544C11.5 17.6268 11.5 18.6681 10.8997 18.9422C10.2994 19.2163 9.58174 18.5026 8.14642 17.0751L4.58281 13.5311C3.86094 12.8132 3.5 12.4542 3.5 12C3.5 11.5458 3.86094 11.1868 4.58281 10.4689L8.14643 6.92487C9.58175 5.49743 10.2994 4.78372 10.8997 5.05779C11.5 5.33185 11.5 6.37322 11.5 8.45596Z">
+                        </path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                        color="currentColor" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M12.5 8.45596V9L6.5 9C5.56812 9 5.10218 9 4.73463 9.15224C4.24458 9.35523 3.85523 9.74458 3.65224 10.2346C3.5 10.6022 3.5 11.0681 3.5 12C3.5 12.9319 3.5 13.3978 3.65224 13.7654C3.85523 14.2554 4.24458 14.6448 4.73463 14.8478C5.10218 15 5.56812 15 6.5 15H12.5V15.544C12.5 17.6268 12.5 18.6681 13.1003 18.9422C13.7006 19.2163 14.4183 18.5026 15.8536 17.0751L19.4172 13.5311C20.1391 12.8132 20.5 12.4542 20.5 12C20.5 11.5458 20.1391 11.1868 19.4172 10.4689L15.8536 6.92487C14.4183 5.49743 13.7006 4.78372 13.1003 5.05779C12.5 5.33185 12.5 6.37322 12.5 8.45596Z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="buttons">
+                    <button class="signUp-btn bg-gray">Sign Up</button>
+                    <button class="login-btn">Log in</button>
+                </div>
+            </div>
+
+            <div class="spotifyPlaylists">
+                <h1>Chudify Playlists.</h1>
+                <div class="cardContainer">
+
+                    <!-- <div data-folder="album1" class="card">
+                        <div class="imageDiv">
+                            <button class="play-btn">
+                                <svg class="cardPlay" viewBox="0 0 56 56">
+                                    <circle cx="28" cy="28" r="28" fill="currentColor" />
+                                    <path d="M23 18L40 28L23 38V18Z" fill="black" />
+                                </svg>
+                            </button>
+                            <img src="imgs/CORTIS.jpg" alt="" />w
+                        </div>
+                        <h2>Corits - Color Outside The Lines</h2>
+                        <p>Start your day off with high energy!</p>
+                    </div> -->
+
+                    
+                
+                </div>
+                <div class="playbar">
+                    <div class="seekbar">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="abovebar">
+                        <div class="songinfodiv">
+
+                        </div>
+                        <div class="songbuttons">
+                            <img width="25" id="previous" class="invert" src="imgs/prevsong.svg" alt="">
+                            <img width="25" id="play" class="invert" src="imgs/play.svg" alt="">
+                            <img width="25" id="next" class="invert" src="imgs/nextsong.svg" alt="">
+                        </div>
+                        <div class="songtimewrapper">
+                            <div class="songtime">
+
+                            </div>
+                            <div class="volumediv">
+                                <img class="invert" id="volume" src="imgs/volume.svg" alt="">
+                                <input id="volumebar" class="volumebar" type="range" name="volume">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

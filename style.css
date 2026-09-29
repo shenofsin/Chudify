@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:  'Roboto', sans-serif;
+}
+
+body{
+    background-color: black;
+    color:white;
+    height:100dvh;
+}
+
+.left{
+    width:25dvw;
+    height: 100vh;
+    padding:10px;
+     background-color: rgb(13, 13, 13);
+     display:flex;
+     flex-direction : column;
+     gap:3px;
+     overflow:hidden;
+}
+
+.right{
+    width:75dvw;
+    /* height: 100%; */
+    height: 100dvh;
+    overflow-y: hidden; 
+    /* we want right to not move at all so the position:absoult of its children can also stay fixed, if we have scroll then position absolute value wont be accurate because right is moving */
+    /* margin:9px; */
+    /* padding-top:10px; */
+    background-color: rgb(13, 13, 13);
+    position: relative;
+    display:flex;
+    flex-direction: column;
+}
+h1{
+    font-family: "Poppins", sans-serif;
+}
+.logo img{
+    width:60px;
+    margin-bottom:6px;
+}
+.logoWrapper{
+    display: flex;
+    width:auto;
+    gap:6px;
+    align-items: center;
+}
+.logoWrapper h1{
+    font-weight: bold;
+}
+
+.logoAnchor, .logoWrapper h1{
+    text-decoration: none;
+    color :inherit;
+
+}
+.container{
+    /* height:100%; */
+    height: auto;
+    gap:7px;
+}
+.home{
+    padding: 16px;
+    /* height:20vh; */
+}
+.home ul li{
+    list-style: none;
+    width:20px;
+    display: flex;
+    gap:14px;
+    padding-top: 10px;
+    font-weight: bold;
+    align-items: center;
+}
+.heading{
+     width:100%;
+    display: flex;
+    gap:14px;
+    padding-top: 10px;
+    font-weight: bold;
+    align-items: center;
+    font-size:11px;
+    margin-bottom:5px;
+    /* background-color: red; */
+}
+.heading img {
+    width:25px
+}
+
+.footer{
+    display: flex;
+    color:gray;
+    font-size: 9px;
+    gap:13px;
+    margin-top:20px;
+    /* position: absolute; */
+    /* bottom: 0; */
+    /* padding-bottom: 10px; */
+    /* margin-top:auto; */
+    height:2vh;
+    /* background-color:red; */
+}
+.footer a {
+    color:gray;
+    text-decoration: none;
+
+}
+
+.library{
+    /* min-height: 75dvh; */
+    position: relative;
+   padding:15px;
+   padding-bottom:0;
+   /* height:80dvh; */
+   flex:1;
+   display:flex;
+   flex-direction:column;
+   overflow:hidden
+   /* max-height: 100dvh; */
+   /* overflow-y: hidden; */
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: rgb(30, 29, 29); */
+}
+/* .header > * {
+    padding:17px
+} same shit*/ 
+.header div{
+    padding:12px;
+}
+
+.spotifyPlaylists{
+    padding: 16px;
+   /* background-color: goldenrod; */
+   display:flex;
+   flex-direction : column;
+   overflow-y:hidden;
+}
+.spotifyPlaylists h1{
+    margin-bottom: 10px;
+}
+
+.cardContainer{
+    /* background-color: blue; */
+    display: flex;
+    gap:13px;
+    margin: 10px;
+    padding:10px 0px 50px 0;
+    /*giving some margin, to give some space b/w playbard and header */
+    flex-wrap: wrap;
+    overflow-y:auto;
+    /* background-color: antiquewhite; */
+    /* padding:10px; */
+    flex:1;
+    /* justify-content: end; */
+    align-items: center;
+      font-size: clamp(0.8rem, 1.4vw, 1.25rem);
+}
+.card{
+    /* width:220px;
+    min-width: 160px; */
+        width: clamp(210px, 20vw, 240px);
+    /* border: 3px solid red; */
+    background-color: green;
+    padding:10px;
+    padding-bottom: 18px;
+    border-radius: 15px;
+    background-color: #252525;
+    transition: all 0.6s ease-in-out;
+    cursor: pointer;
+    /* min-height:350px; */
+    height:350px;
+}
+.card img {
+    width:100%;
+    height:200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.card h2 {
+    /* font-size: 1.3rem; */
+    font-size:clamp(1rem, 1.5vw, 1.3rem);
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.card p{
+    font-size:clamp(0.7rem,0.7vw,1rem);
+    color:rgb(186, 178, 178);
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.card:hover{
+    background-color: rgb(32, 35, 29);
+}
+.card > *{
+    padding-top: 8px;
+
+}
+
+.imageDiv{
+    position: relative;
+    margin:7px;
+}
+
+.play-btn {
+    position: absolute;
+    bottom:0;
+    right:5px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, bottom 0.5s ease-out;
+}
+
+.play-btn svg {
+    width: 100%;
+    height: 100%;
+}
+
+.card:hover .play-btn{
+    opacity: 1;
+    bottom:10px;
+}
+.play-btn-visible{
+     opacity: 1;
+    bottom:10px;
+}
+
+.signUp-btn{
+    border:none;
+    padding:1rem;
+    color:gray;
+    font-weight: bold;
+    transition: color 0.6s ease-out, transform 0.6s ease-out;
+    cursor: pointer;
+}
+.signUp-btn:hover{
+    color:white;
+    transform: scale(1.06);
+}
+.login-btn{
+    border:none;
+    background-color: whitesmoke;
+    color:black;
+    padding:1rem 1.7rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 18px;
+    transition: background-color 0.6s ease-out, transform 0.6s ease-out;
+}
+.login-btn:hover{
+    background-color: rgba(245, 245, 245, 0.825);
+    transform: scale(1.06);
+}
+
+.playbar{
+    position: absolute;
+    bottom:0;
+    left:0;
+    background-color: rgb(18, 17, 17);
+    width: 100%;
+    padding:0.3rem;
+    height:6vh;
+    max-height: 70px;
+    /* display:flex; */
+    justify-content: space-between;
+}
+.playbar img{
+     width: clamp(20px, 2.5vw, 25px);
+}
+
+.songbuttons{
+    display:flex;
+    align-items: top;
+    justify-content: start;
+    gap: 12px;
+    /* background-color: red; */
+    /* padding-bottom:6px; */
+}
+
+.songList{
+    padding:12px 12px;
+    overflow-y: auto;
+    /* background-color:red; */
+    flex:1;
+    /* margin:30px; */
+    /* margin-bottom: 10px; */
+}
+.songList ul li {
+    list-style-type: decimal;
+    display: flex;
+    gap:0.8rem;
+    padding:0.5rem;
+    margin:10px 0 ;
+    /* background-color: rgb(18, 40, 59); */
+    border: 1px solid rgba(255, 255, 255, 0.515);
+    border-radius: 8px;
+    cursor: pointer;
+    justify-content: space-between;
+    /* width:100%; */
+}
+.songinfo{
+    width:80%;
+    /* background-color: red; */
+     min-width: 0;
+}
+.songinfo div{
+    font-size: 0.8rem;
+    padding: 3px 0;
+}
+
+.playinfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+}
+.playinfo span{
+    font-size: 0.7rem;
+    /* width:64px; */
+}
+.songtitle{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width:100%;
+     min-width: 0;
+}
+.seekbar{
+    background-color: rgb(33, 34, 32);
+    /* background: black; */
+    width: 96%;
+    border:1px solid rgba(190, 190, 184, 0.541);
+    position: absolute;
+    bottom: 0;
+    height:1vh;
+    padding:0.3rem;
+    /* margin:px 0; */
+    left:2%;
+    height:7px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.circle{
+    height:10px;
+    width:10px;
+    border-radius: 50%;
+    background-color:white;
+    position: absolute;
+    top:0px;
+    left:0;
+    transition: left 0.3s;
+}
+.songbuttons img {
+    cursor: pointer;
+}
+
+.abovebar{
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+
+.songinfodiv{
+    width:25%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+     /* background-color:red; */
+      padding:0 6px;
+}
+.songtime{
+    /* width:25%; */
+    width:auto;
+    /* background-color:red; */
+    text-align:right;
+    padding:0 6px;
+    /* background-color: red; */
+}
+.hamburger{
+    display: none;
+}
+
+.logoContainer{
+    display:flex;
+    justify-content: start;
+    align-items: center;
+}
+#close{
+    display:none;
+    cursor: pointer;
+}
+
+.rightWrap{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    overflow:hidden;
+}
+
+#volume{
+    cursor:pointer;
+}
+.songtimewrapper{
+    display:flex;
+    width:25%;
+    justify-content: flex-end;
+    gap:14px;
+    align-items: center;
+}
+
+.volumediv{
+    position: relative;
+}
+.volumebar{
+    position: absolute;
+    top:-20px;
+    right:0;
+    opacity: 0;
+    /* display: none; */
+    transition: all 1s ease-in-out;
+    background-color: green;
+}
+.volumediv:hover .volumebar{
+    opacity: 1;
+    /* display: inline-block; */
+}
+input[type="range"] {
+    accent-color: #a9c0a2;
+}
+
+
+.cardPlay circle{
+      color:#38c168;
+    transition: all 0.3s ease-in-out;
+}
+.cardPlay:hover circle{
+    color:#dc9b55
+}
+
+
+
+
+
+@media (max-width:1350px){
+    .left{
+        /* border:2px solid red; */
+        position: fixed;
+        left: -100%;
+        transition: all 0.7s ease-in-out;
+        z-index: 2;
+        width:40dvw;
+    }
+    .right{
+        width:100dvw;
+    }
+    .hamburger{
+        display: inline-block;
+        padding:0 5px;
+    }
+    .hamburger img{
+        height: 30px;
+    }
+    .logoContainer{
+        justify-content: space-between;
+    }
+    #close{
+        display: inline-block;
+    }
+}
+
+@media (max-width : 500px)
+{
+    .left{
+    width:90dvw;  
+
+    }
+    .card{
+        border-radius: none;
+        /* height:210px; */
+        width:300px;
+    }
+    .cardContainer{
+        margin:0;
+        justify-content: center;
+    }
+    .card img{
+        height:250px;
+    }
+    .play-btn{
+        transition: opacity 1s ease-out, bottom 0.5s ease-out;
+    }
+}
+@media (max-width:380px)
+{
+.playbar img{
+        width:24px;
+    }
+}
